@@ -1,0 +1,32 @@
+#### 그누보드5 rewrite BEGIN #####
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+####
+RewriteRule ^estimate  theme/chadeal_ver1/estimate/estimate.php  [L]
+RewriteRule ^result  theme/chadeal_ver1/estimate/estimate_result.php  [L]
+RewriteRule ^sheet/([0-9a-zA-Z_]+)/([0-9a-zA-Z_]+)$  theme/chadeal_ver1/estimate/estimate_sheet.php?estIdx=$1&sheetIdx=$2  [QSA,L]
+####
+RewriteRule ^firstorder  theme/chadeal_ver1/firstorder/firstorder.php  [L]
+RewriteRule ^firstorder/([0-9a-zA-Z_]+)$  theme/chadeal_ver1/firstorder/firstorder.php?orderType=$1  [QSA,L]
+RewriteRule ^list/([0-9a-zA-Z_]+)/([0-9a-zA-Z_]+)$  theme/chadeal_ver1/firstorder/list.php?od=$1&mi=$2  [L]
+####
+RewriteRule ^garage  theme/chadeal_ver1/garage/garage.php  [L]
+RewriteRule ^detail  theme/chadeal_ver1/garage/detail.php  [L]
+####
+RewriteRule ^term  theme/chadeal_ver1/term.php  [L]
+####
+RewriteRule ^login  theme/chadeal_ver1/login/login.php  [L]
+####
+RewriteRule ^content/([0-9a-zA-Z_]+)$  bbs/content.php?co_id=$1&rewrite=1  [QSA,L]
+RewriteRule ^content/([^/]+)/$  bbs/content.php?co_seo_title=$1&rewrite=1      [QSA,L]
+RewriteRule ^rss/([0-9a-zA-Z_]+)$  bbs/rss.php?bo_table=$1        [QSA,L]
+RewriteRule ^([0-9a-zA-Z_]+)$  bbs/board.php?bo_table=$1&rewrite=1      [QSA,L]
+RewriteRule ^([0-9a-zA-Z_]+)/([^/]+)/$ bbs/board.php?bo_table=$1&wr_seo_title=$2&rewrite=1      [QSA,L]
+RewriteRule ^([0-9a-zA-Z_]+)/write$  bbs/write.php?bo_table=$1&rewrite=1    [QSA,L]
+RewriteRule ^([0-9a-zA-Z_]+)/([0-9]+)$  bbs/board.php?bo_table=$1&wr_id=$2&rewrite=1  [QSA,L]
+</IfModule>
+#### 그누보드5 rewrite END #####

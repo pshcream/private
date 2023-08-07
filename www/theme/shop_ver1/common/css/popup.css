@@ -1,0 +1,94 @@
+/* common */
+body.on {
+    height: 100%;
+    overflow: hidden;
+}
+
+.popup {
+    display: none;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.popup-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 550px;
+    padding: 30px;
+    transform: translate(-50%, -50%);
+    background: #fff;
+}
+
+.popup-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 12px;
+    height: 12px;
+    padding: 10px;
+    background: url(../img/icon-close.svg) no-repeat center center / auto;
+    box-sizing: content-box;
+}
+
+.popup-header h1 {
+    padding: 30px 0 10px;
+    font-size: 1.375rem;
+    line-height: 160%;
+    text-align: center;
+    letter-spacing: -0.02em;
+    border-bottom: 1.2px solid #DEDEDE;
+}
+
+.popup-content {
+    padding-top: 30px;
+}
+
+.popup-content-inner {
+    padding-right: 10px;
+    max-height: 380px;
+    overflow: auto;
+}
+
+.popup ::-webkit-scrollbar {
+    width: 8px !important;
+    height: 5px !important;
+    border-radius: 5px;
+    background: #F5F5F3;
+}
+
+.popup ::-webkit-scrollbar-thumb {
+    height: 30%;
+    border-radius: 5px;
+    background: #AAAAAA;
+}
+
+/* 개인정보 취급방침 */
+.privacy-popup pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+@media screen and (max-width:768px) {
+    .popup-inner {
+        padding: 20px;
+        width: 320px;
+        height: 400px;
+    }
+
+    .popup-content {
+        padding-top: 20px;
+        font-size: 0.857rem;
+        line-height: 18px;
+    }
+
+    .popup-content-inner {
+        max-height: 250px;
+    }
+}
